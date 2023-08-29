@@ -138,6 +138,10 @@ class MyServer(BaseHTTPRequestHandler):
         .lh-tight {
             line-height: 1.25;
         }
+        .scroll {
+            height: 750px;
+            overflow-y: scroll;
+        }
     </style>
 
 </head>
@@ -273,6 +277,7 @@ class MyServer(BaseHTTPRequestHandler):
     <div class="b-example-divider"></div>
 
     <div class="container">
+        <div class="scroll">
         <header>
             <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
                 <h1 class="display-4 fw-normal text-body-emphasis">Главная</h1>
@@ -328,47 +333,106 @@ class MyServer(BaseHTTPRequestHandler):
                     <div class="card mb-4 rounded-3 shadow-sm ">
                         <h5 class="card-title mt-3">FAQ</h5>
                         <p class="d-inline-flex gap-3 mt-2">
-                            <a class="w-50 btn btn-outline-success ms-3" data-bs-toggle="collapse" href="#collapse1" role="button"
+                            <a class="w-50 btn btn-outline-success ms-3" data-bs-toggle="collapse" href="#collapse1"
+                               role="button"
                                aria-expanded="false" aria-controls="collapse1">
                                 Как купить?
                             </a>
                             <button class="w-50 btn btn-outline-success " type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapse2" aria-expanded="false"
-                                    aria-controls="collapse2"> Как доставить? </button>
+                                    aria-controls="collapse2"> Как доставить?
+                            </button>
 
                             <button class="w-50 btn btn-outline-success me-3" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapse3" aria-expanded="false"
-                                    aria-controls="collapse3"> Какая гарантия? </button>
+                                    aria-controls="collapse3"> Какая гарантия?
+                            </button>
                         </p>
-                            <div class="collapse" id="collapse1">
+                        <div class="collapse" id="collapse1">
                             <div class="card card-body"> Ответ для блока как купить</div>
-                            </div>
-                            <div class="collapse" id="collapse2">
+                        </div>
+                        <div class="collapse" id="collapse2">
                             <div class="card card-body"> Ответ для блока как доставить</div>
-                            </div>
-                                <div class="collapse" id="collapse3">
+                        </div>
+                        <div class="collapse" id="collapse3">
                             <div class="card card-body">Ответ для блока какая гарантия</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">Название товара</th>
+                <th scope="col">Цена за шт., рублей</th>
+                <th scope="col">Кол-во</th>
+                <th scope="col">Общая сумма, рублей</th>
+                <th scope="col">Статус заказа</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Товар российский супер</td>
+                <td>100</td>
+                <td>2</td>
+                <td>200</td>
+                <td><div class="alert alert-primary" role="alert">Новый</div></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Товар китайский норм</td>
+                <td>80</td>
+                <td>2</td>
+                <td>160</td>
+                <td><div class="alert alert-success" role="alert">Обработан</div></td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Товар американский </td>
+                <td>120</td>
+                <td>1</td>
+                <td>120</td>
+                <td><div class="alert alert-danger" role="alert">Отменен</div></td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>Товар китайский эконом</td>
+                <td>60</td>
+                <td>5</td>
+                <td>300</td>
+                <td><div class="alert alert-warning" role="alert">Обработка</div></td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>Товар российский премиум</td>
+                <td>150</td>
+                <td>3</td>
+                <td>450</td>
+                <td><div class="alert alert-success" role="alert">Обработан</div></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
     </div>
 </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-            crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 
-    <script>
-        /* global bootstrap: false */
-        (function () {
-            'use strict'
-            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-            tooltipTriggerList.forEach(function (tooltipTriggerEl) {
-                new bootstrap.Tooltip(tooltipTriggerEl)
-            })
-        })()
-    </script>
+<script>
+    /* global bootstrap: false */
+    (function () {
+        'use strict'
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+            new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    })()
+</script>
 </body>
 </html>
 """
